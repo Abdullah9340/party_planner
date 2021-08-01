@@ -18,7 +18,6 @@ const partySchema = new Schema({
   items: {
     type: Array,
   },
-  createdAt: { type: Date, expires: "10080m", default: Date.now },
 });
 
 const Party = mongoose.model("Party", partySchema);

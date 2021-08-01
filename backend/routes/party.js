@@ -57,14 +57,16 @@ Router.route("/delete").delete((req, res) => {
 });
 Router.route("/deleteItem/:index").post((req, res) => {
   const code = req.body.code;
-  Party.findOne({ code: code }).then((party) => {
-    party.items.splice(req.params.index, 1);
+  Party.findOne({ code: code })
+    .then((party) => {
+      party.items.splice(req.params.index, 1);
 
-    party
-      .save()
-      .then(res.json(party))
-      .catch((err) => res.status(400).json("error" + err));
-  });
+      party
+        .save()
+        .then(res.json(party))
+        .catch((err) => res.status(400).json("error" + err));
+    })
+    .catch((err) => res.status(400).json("error" + err));
 });
 
 module.exports = Router;

@@ -1,4 +1,4 @@
-import { useParams } from "react-router";
+import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
@@ -23,6 +23,7 @@ function ItemPage() {
   }, []);
 
   const deleteFunction = (index) => {
+    console.log(id);
     axios
       .post(`http://localhost:5000/party/deleteItem/${index}`, { code: id })
       .then((res) => {

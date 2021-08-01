@@ -38,7 +38,10 @@ function CreateParty() {
       axios.post("http://localhost:5000/party/add", Party);
       setPartyCode("");
       setPartyName("");
-      setStatusMessage("Party Added. Party Will Expire in 7 Days");
+      setStatusMessage("Party Added.");
+      setTimeout(() => {
+        setStatusMessage("");
+      }, 3000);
     }
   };
 
