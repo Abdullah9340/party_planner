@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { Link } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="pageBackground">
+      <Link to="/" style = {{textDecoration :'none'}}>
+      <div className="header">
+        <p>Party Planner</p>
+      </div>
+      </Link>
+      <Link to="/joinParty">
+        <div className="joinButton">Join Party</div>
+      </Link>
+      <Link to="/createParty">
+        <div className="createButton">Create Party</div>
+      </Link>
+      <div className="welcomeText">
+        <p>Welcome to Party Planner</p>
+        <p>Would you like to join an existing party or create a new one?</p>
+      </div>
     </div>
   );
 }

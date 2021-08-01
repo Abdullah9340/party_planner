@@ -1,17 +1,24 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { withRouter } from "react-router";
+
+import joinParty from "./joinParty";
+import mainPage from "./App";
+import createParty from "./createParty";
+import ItemPage from "./PartyScreen/ItemPage";
+import AddItem from "./PartyScreen/AddItem";
+const rootElement = document.getElementById("root");
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+  <Router>
+    <Switch>
+      <Route exact path="/" component={withRouter(mainPage)} />
+      <Route exact path="/joinParty" component={withRouter(joinParty)} />
+      <Route exact path="/createParty" component={withRouter(createParty)} />
+      <Route exact path="/itemsPage/:id" component={withRouter(ItemPage)} />
+      <Route exact path="/addItem/:id" component={withRouter(AddItem)} />
+    </Switch>
+  </Router>,
+  rootElement
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
