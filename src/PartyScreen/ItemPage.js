@@ -23,7 +23,6 @@ function ItemPage() {
   }, []);
 
   const deleteFunction = (index) => {
-    console.log(id);
     axios
       .post(`http://localhost:5000/party/deleteItem/${index}`, { code: id })
       .then((res) => {
