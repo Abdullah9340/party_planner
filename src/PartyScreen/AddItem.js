@@ -13,7 +13,7 @@ function AddItem() {
   const history = useHistory();
   const createItem = () => {
     axios
-      .post(`http://localhost:5000/party/${id}/addItem`, {
+      .post(`https://party-planner-app.herokuapp.com/party/${id}/addItem`, {
         item: { name: item, user: username },
       })
       .then(() => {
@@ -29,13 +29,10 @@ function AddItem() {
   return (
     <div className="pageBackground">
       <Link to="/" style={{ textDecoration: "none" }}>
-        <div className="header">
-          <p>Party Planner</p>
-        </div>
+        <div className="partyNameHeader">{id}</div>
       </Link>
-      <div className="partyNameHeader">{id}</div>
       <br />
-      <p>Who is Bringing The Item?</p>
+      <p className = "ItemsText">Who is Bringing The Item?</p>
       <input
         type="text"
         value={username}
@@ -43,7 +40,7 @@ function AddItem() {
           setUsername(e.target.value);
         }}
       />
-      <p>What is the Item?</p>
+      <p className = "ItemsText">What is the Item?</p>
       <input
         type="text"
         value={item}

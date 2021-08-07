@@ -14,7 +14,7 @@ function ItemPage() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/party/find/${id}`)
+      .get(`https://party-planner-app.herokuapp.com/party/find/${id}`)
       .then((res) => {
         setPartyName(res.data.name);
         setPartyItems(res.data.items);
@@ -24,7 +24,10 @@ function ItemPage() {
 
   const deleteFunction = (index) => {
     axios
-      .post(`http://localhost:5000/party/deleteItem/${index}`, { code: id })
+      .post(
+        `https://party-planner-app.herokuapp.com/party/deleteItem/${index}`,
+        { code: id }
+      )
       .then((res) => {
         setPartyItems(res.data.items);
       });
@@ -32,13 +35,10 @@ function ItemPage() {
   return (
     <div className="pageBackground">
       <Link to="/" style={{ textDecoration: "none" }}>
-        <div className="header">
-          <p>Party Planner</p>
-        </div>
+        <div className="partyNameHeader">{partyName}</div>
       </Link>
-      <div className="partyNameHeader">{partyName}</div>
       <br />
-      <p>Items:</p>
+      <p className="ItemsText">Items:</p>
       {partyItems.map((partyItem, index) => {
         return (
           <Item
@@ -50,7 +50,9 @@ function ItemPage() {
           />
         );
       })}
-      <Link className="addItem" to = {linkURL}>Add Item</Link>
+      <Link className="addItem" to={linkURL}>
+        Add Item
+      </Link>
     </div>
   );
 }

@@ -7,21 +7,24 @@
 }
 
 .pageBackground {
-  background: linear-gradient(white, lightgray);
+  background-color: black;
   height: 100vh;
 }
 
 .header {
   text-align: center;
-  background: linear-gradient(pink, rgb(230, 174, 183));
-  padding: 16px;
+  background: rgba(133, 133, 209, 0.7);
+  padding: 32px;
   text-decoration: none;
-  color: black;
+  color: white;
 }
 
+.header:hover {
+  background-color: rgba(133, 133, 209, 0.8);
+}
 .joinButton {
   padding: 8px;
-  background-color: rgba(79, 255, 62, 0.836);
+  background-color: rgba(119, 136, 153, 0.678);
   float: left;
   width: 50%;
   text-align: center;
@@ -30,10 +33,14 @@
   border-color: black;
   color: black;
   text-decoration: none;
+}
+
+.joinButton:hover {
+  background-color: rgba(119, 136, 153, 0.9);
 }
 .createButton {
   padding: 8px;
-  background-color: rgba(206, 30, 56, 0.836);
+  background-color: rgba(119, 136, 153, 0.678);
   float: left;
   width: 50%;
   text-align: center;
@@ -43,15 +50,26 @@
   border-color: black;
   text-decoration: none;
 }
+.createButton:hover {
+  background-color: rgba(119, 136, 153, 0.9);
+}
 
 .welcomeText {
+  font-size: medium;
   text-align: center;
-  padding-top: 30vh;
+  margin-top: 30vh;
+  color: lightgrey;
+  background-color: rgba(0, 0, 0, 0.479);
 }
 
 .searchBox {
   text-align: center;
   padding-top: 30vh;
+}
+
+.searchBox p {
+  color: lightgray;
+  background-color: rgba(0, 0, 0, 0.438);
 }
 
 .statusMessage {

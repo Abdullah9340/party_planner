@@ -1,27 +1,27 @@
 import "./App.css";
-import { Link,useHistory} from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
 function JoinParty() {
-
-  const [partyCode,setPartyCode] = useState("");
-  const [statusMessage,setStatusMessage] = useState("");
+  const [partyCode, setPartyCode] = useState("");
+  const [statusMessage, setStatusMessage] = useState("");
   const history = useHistory();
-  
-  const onChangeText = function(e){
+
+  const onChangeText = function (e) {
     setPartyCode(e.target.value);
-  }
-  const searchForParty = function(e){
+  };
+  const searchForParty = function (e) {
     e.preventDefault();
-    axios.get(`http://localhost:5000/party/find/${partyCode}`)
-    .then((res) =>{
-      if(res.data !== null){
-       history.push(`/itemsPage/${partyCode}`);
-      }else{
-        setStatusMessage("Party Not Found");
-      }
-    });
-  }
+    axios
+      .get(`https://party-planner-app.herokuapp.com/party/find/${partyCode}`)
+      .then((res) => {
+        if (res.data !== null) {
+          history.push(`/itemsPage/${partyCode}`);
+        } else {
+          setStatusMessage("Party Not Found");
+        }
+      });
+  };
 
   return (
     <div className="pageBackground">
@@ -38,10 +38,19 @@ function JoinParty() {
       </Link>
       <div className="searchBox">
         <p>What is your party code?</p>
-        <input type="search"id="searchParty" value={partyCode} onChange={onChangeText}/>
+        <input
+          type="search"
+          id="searchParty"
+          value={partyCode}
+          onChange={onChangeText}
+        />
         <button onClick={searchForParty}>Search</button>
         <br />
-        <textarea value ={statusMessage} className = "statusMessage" readOnly></textarea>
+        <textarea
+          value={statusMessage}
+          className="statusMessage"
+          readOnly
+        ></textarea>
       </div>
     </div>
   );

@@ -1,27 +1,32 @@
 * {
   box-sizing: border-box;
-  font-family: "Courier New", Courier, monospace;
+  font-family: "Sans Serif", Courier, monospace;
   margin: 0;
   padding: 0;
 }
 
 .pageBackground {
-  background: linear-gradient(white, lightgray);
+  background-image: url("../Assets/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
   height: 100vh;
 }
 
 .header {
   text-align: center;
-  background: linear-gradient(pink, rgb(230, 174, 183));
-  padding: 8px;
+  background-color: rgba(114, 114, 218, 0.7);
+  padding: 16px;
   font-weight: bold;
   text-decoration: none;
   color: black;
+  font-size: 16px;
 }
-
+.header:hover {
+  background-color: rgba(133, 133, 209, 0.8);
+}
 .partyNameHeader {
   text-align: center;
-  background-color: rgb(158, 98, 108);
+  background-color: rgba(114, 114, 218, 0.7);
   padding: 16px;
   font-size: 16px;
   text-decoration: none;
@@ -92,4 +97,9 @@
 
 .EditButton:hover {
   cursor: pointer;
+}
+
+.ItemsText {
+  color: lightgray;
+  background-color: rgba(0, 0, 0, 0.555);
 }

@@ -35,7 +35,7 @@ function CreateParty() {
         name: partyName,
         code: partyCode,
       };
-      axios.post("http://localhost:5000/party/add", Party);
+      axios.post("https://party-planner-app.herokuapp.com/party/add", Party);
       setPartyCode("");
       setPartyName("");
       setStatusMessage("Party Added.");
@@ -50,7 +50,7 @@ function CreateParty() {
       return { data: null };
     }
     return axios
-      .get(`http://localhost:5000/party/find/${partyCode}`)
+      .get(`https://party-planner-app.herokuapp.com/party/find/${partyCode}`)
       .then((res) => res);
   };
   return (
