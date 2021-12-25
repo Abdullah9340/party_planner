@@ -18,7 +18,7 @@ function JoinParty() {
         if (res.data !== null) {
           history.push(`/itemsPage/${partyCode}`);
         } else {
-          setStatusMessage("Party Not Found");
+          alert("Party Not Found");
         }
       });
   };

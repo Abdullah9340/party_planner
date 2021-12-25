@@ -20,16 +20,12 @@ function CreateParty() {
     const res = await getCodeData();
     if (res.data !== null) {
       if (partyCode.length === 0) {
-        setStatusMessage(
-          "Name must be atleast 3 Characters. Code must be atleast 5."
-        );
+        alert("Name must be atleast 3 Characters. Code must be atleast 5.");
       } else {
-        setStatusMessage("Party Code is already in use");
+        alert("Party Code is already in use");
       }
     } else if (partyCode.length < 5 || partyName.length < 3) {
-      setStatusMessage(
-        "Name must be atleast 3 Characters. Code must be atleast 5."
-      );
+      alert("Name must be atleast 3 Characters. Code must be atleast 5.");
     } else {
       const Party = {
         name: partyName,
@@ -38,10 +34,10 @@ function CreateParty() {
       axios.post("https://party-planner-app.herokuapp.com/party/add", Party);
       setPartyCode("");
       setPartyName("");
-      setStatusMessage("Party Added.");
-      setTimeout(() => {
+      alert("Party Added.");
+      /*       setTimeout(() => {
         setStatusMessage("");
-      }, 3000);
+      }, 3000); */
     }
   };
 
