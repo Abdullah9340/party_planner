@@ -33,10 +33,13 @@
   border-color: black;
   color: black;
   text-decoration: none;
+  transition: ease 0.5s;
 }
 
 .joinButton:hover {
   background-color: rgba(119, 136, 153, 0.9);
+  letter-spacing: 0.3rem;
+  transform: scaleY(110%);
 }
 .createButton {
   padding: 8px;
@@ -49,9 +52,12 @@
   border-width: 1px;
   border-color: black;
   text-decoration: none;
+  transition: ease 0.2s;
 }
 .createButton:hover {
   background-color: rgba(119, 136, 153, 0.9);
+  letter-spacing: 0.3rem;
+  transform: scaleY(110%);
 }
 
 .welcomeText {
